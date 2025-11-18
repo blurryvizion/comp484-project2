@@ -18,7 +18,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   
     function clickedTreatButton() {
       // Increase pet happiness
-      happiness = happiness + 1;
+    'hapiness' = 'happiness' + 1;
       // Increase pet weight
       weight = weight + 1; 
       checkAndUpdatePetInfoInHtml();
@@ -26,17 +26,17 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     
     function clickedPlayButton() {
       // Increase pet happiness
-      happiness = happiness + 1;
+
       // Decrease pet weight
-      weight = weight - 1;
+
       checkAndUpdatePetInfoInHtml();
     }
     
     function clickedExerciseButton() {
       // Decrease pet happiness
-      happiness = happiness - 1;
+
       // Decrease pet weight
-      weight = weight - 1;
+     
       checkAndUpdatePetInfoInHtml();
     }
   
