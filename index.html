@@ -2,60 +2,50 @@
 <html>
   <head>
     <title>Your Giga Pet</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- jQuery library -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
-    <!-- Your script -->
+    <!-- Game Script -->
     <script src="script.js" defer></script>
   </head>
+
   <body>
     <header>
-      <h1>
-        This is your Giga Pet
-      </h1>
+      <h1>This is your Giga Pet</h1>
     </header>
 
-    <main>
-      <section class="pet-image-container">
-        <!-- Pet image -->
+    <!-- Main layout -->
+    <main class="game-layout">
+
+      <!-- Pet image -->
+      <section class="pet-image-area">
         <img class="pet-image" src="images/IMG_7341.jpeg">
       </section>
 
+      <!-- Stats + buttons -->
       <section class="dashboard">
-        <!-- Stats -->
         <div>Name: <strong><span class="name"></span></strong></div>
         <div>Weight: <strong><span class="weight"></span> ounces</strong></div>
-        <div>Happiness: <strong><span class="happiness"></span>/10 fluffiness</strong></div>
-        <div>Energy: <strong><span class="energy"></span>/10 zoomies</strong></div>
+        <div>Happiness: <strong><span class="happiness"></span>/10</strong></div>
+        <div>Energy: <strong><span class="energy"></span>/10</strong></div>
 
-        <!-- Message from pet -->
+        <!-- Pet message -->
         <div id="pet-message" class="pet-message"></div>
 
+        <!-- Action buttons -->
         <div class="button-container">
-          <button class="treat-button">
-            Treat: Seeds
-          </button>
-          <button class="play-button">
-            Play: Destroy cardboard box
-          </button>
-          <button class="exercise-button">
-            Exercise: fly around the house
-          </button>
-          <button class="nap-button">
-            Nap: Cozy shoulder nap
-          </button>
+          <button class="treat-button">Treat</button>
+          <button class="play-button">Play</button>
+          <button class="exercise-button">Exercise</button>
+          <button class="nap-button">Nap</button>
         </div>
       </section>
+
     </main>
   </body>
 </html>
