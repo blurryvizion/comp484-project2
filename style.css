@@ -53,3 +53,8 @@
   border: 1px solid #404853;
   cursor: pointer;
 }
+
+/*highlight active button*/
+.button-container button.active-btn {
+  outline: 2px solid #ffd54f;
+}
