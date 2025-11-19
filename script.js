@@ -1,65 +1,66 @@
-$(function() { // Makes sure that your function is called once all the DOM elements of the page are ready to be used.
-    
-    // Called function to update the name, happiness, and weight of our pet in our HTML
-    checkAndUpdatePetInfoInHtml();
-  
-    // When each button is clicked, it will "call" function for that button (functions are below)
-    $('.treat-button').click(clickedTreatButton);
-    $('.play-button').click(clickedPlayButton);
-    $('.exercise-button').click(clickedExerciseButton);
-  
+// Wait until the page is ready
+$(function () {
+  // Show the starting values
+  checkAndUpdatePetInfoInHtml();
 
-  
-    
-  })
-  
-    // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name:"Michi", weight:"10", happiness:"10"};
-  
-    function clickedTreatButton() {
-      // Increase pet happiness
-    
-      // Increase pet weight
-      weight = weight + 1; 
-      checkAndUpdatePetInfoInHtml();
-    }
-    
-    function clickedPlayButton() {
-      // Increase pet happiness
+  // Hook up the buttons
+  $('.treat-button').click(clickedTreatButton);
+  $('.play-button').click(clickedPlayButton);
+  $('.exercise-button').click(clickedExerciseButton);
+});
 
-      // Decrease pet weight
+// Pet info object
+var pet_info = {
+  name: "Michi",
+  weight: 10,      // numbers, not strings
+  happiness: 10
+};
 
-      checkAndUpdatePetInfoInHtml();
-    }
-    
-    function clickedExerciseButton() {
-      // Decrease pet happiness
+// --- Button functions ---
 
-      // Decrease pet weight
-     
-      checkAndUpdatePetInfoInHtml();
-    }
-  
-    function checkAndUpdatePetInfoInHtml() {
-      checkWeightAndHappinessBeforeUpdating();  
-      updatePetInfoInHtml();
-    }
-    
-    function checkWeightAndHappinessBeforeUpdating() {
-      // Add conditional so if weight is lower than zero.
-      if (pet_info['weight'] < 0) {
-        pet_info['weight'] = 0;
-      }
-      // Add conditional so if happiness is lower than zero.
-      if (pet_info['happiness'] < 0) {
-        pet_info['happiness'] = 0;
-      }
-    }
-    
-    // Updates your HTML with the current values in your pet_info object
-    function updatePetInfoInHtml() {
-      $('.name').text(pet_info['name']);
-      $('.weight').text(pet_info['weight']);
-      $('.happiness').text(pet_info['happiness']);
-    }
-  
+function clickedTreatButton() {
+  // Give a treat: happier & heavier
+  pet_info.happiness += 1;
+  pet_info.weight += 1;
+  checkAndUpdatePetInfoInHtml();
+}
+
+function clickedPlayButton() {
+  // Play: much happier, a little lighter
+  pet_info.happiness += 2;
+  pet_info.weight -= 1;
+  checkAndUpdatePetInfoInHtml();
+}
+
+function clickedExerciseButton() {
+  // Exercise: a bit less happy, lighter
+  pet_info.happiness -= 1;
+  pet_info.weight -= 2;
+  checkAndUpdatePetInfoInHtml();
+}
+
+// --- Helper functions ---
+
+function checkAndUpdatePetInfoInHtml() {
+  checkWeightAndHappinessBeforeUpdating();
+  updatePetInfoInHtml();
+}
+
+function checkWeightAndHappinessBeforeUpdating() {
+  // Keep values in a reasonable range
+  if (pet_info.weight < 0) {
+    pet_info.weight = 0;
+  }
+  if (pet_info.happiness < 0) {
+    pet_info.happiness = 0;
+  }
+  if (pet_info.happiness > 10) {
+    pet_info.happiness = 10;
+  }
+}
+
+function updatePetInfoInHtml() {
+  $('.name').text(pet_info.name);
+  $('.weight').text(pet_info.weight);
+  $('.happiness').text(p_info.happiness);
+}
