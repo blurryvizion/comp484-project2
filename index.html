@@ -7,8 +7,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="script.js" defer></script>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+
+    <!-- Your script -->
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -19,13 +27,20 @@
 
     <main>
       <section class="pet-image-container">
-         <!-- Replace pet image with your own pet image -->
+        <!-- Pet image -->
         <img class="pet-image" src="images/IMG_7341.jpeg">
       </section>
+
       <section class="dashboard">
+        <!-- Stats -->
         <div>Name: <strong><span class="name"></span></strong></div>
         <div>Weight: <strong><span class="weight"></span> ounces</strong></div>
         <div>Happiness: <strong><span class="happiness"></span>/10 fluffiness</strong></div>
+        <div>Energy: <strong><span class="energy"></span>/10 zoomies</strong></div>
+
+        <!-- Message from pet -->
+        <div id="pet-message" class="pet-message"></div>
+
         <div class="button-container">
           <button class="treat-button">
             Treat: Seeds
@@ -36,13 +51,11 @@
           <button class="exercise-button">
             Exercise: fly around the house
           </button>
+          <button class="nap-button">
+            Nap: Cozy shoulder nap
+          </button>
         </div>
       </section>
     </main>
-
-    <!-- Your web-app is https, so your scripts need to be too -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
   </body>
 </html>
