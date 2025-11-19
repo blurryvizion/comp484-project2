@@ -62,5 +62,5 @@ function checkWeightAndHappinessBeforeUpdating() {
 function updatePetInfoInHtml() {
   $('.name').text(pet_info.name);
   $('.weight').text(pet_info.weight);
-  $('.happiness').text(p_info.happiness);
+  $('.happiness').text(pet_info.happiness); // <- fixed here
 }
