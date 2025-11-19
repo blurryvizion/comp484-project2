@@ -20,6 +20,7 @@ var pet_info = {
 function clickedTreatButton() {
   pet_info.happiness += 1;
   pet_info.weight += 1;
+  pet_info.energy -= 1;
 
   showPetMessage("Michi chirps happily after the seeds!");
   checkAndUpdatePetInfoInHtml();
@@ -39,9 +40,9 @@ function clickedPlayButton() {
 function clickedExerciseButton() {
   pet_info.happiness -= 1;
   pet_info.weight -= 2;
-  pet_info.energy += 1;
+  pet_info.energy += 2;
 
-  showPetMessage("Michi flies laps around the house!");
+  showPetMessage("Michi flies laps around the house looking for food!");
   checkAndUpdatePetInfoInHtml();
 }
 
@@ -56,12 +57,36 @@ function clickedNapButton() {
 
 // Update and clamp stats
 function checkAndUpdatePetInfoInHtml() {
-  if (pet_info.weight < 0) pet_info.weight = 0;
-  if (pet_info.happiness < 0) pet_info.happiness = 0;
-  if (pet_info.energy < 0) pet_info.energy = 0;
+  if (pet_info.weight < 0) 
+  {
+    pet_info.weight = 0;
+    showPetMessage("Michi is too skinny! Feed her more treats!");
+  }
+  if (pet_info.happiness < 0) 
+  {
+    pet_info.happiness = 0;
+    showPetMessage("Michi is sad! Play with her to cheer her up!");
+  }
+  if (pet_info.energy < 0) 
+  {
+    pet_info.energy = 0;
+    showPetMessage("Michi is exhausted! Let her take a nap!");
+  }
+  
+  if (pet_info.weight > 20)
+  {
+    pet_info.weight = 20;
+    showPetMessage("Michi is overweight! Exercise with her to slim down!");
+  }
 
-  if (pet_info.happiness > 10) pet_info.happiness = 10;
-  if (pet_info.energy > 10) pet_info.energy = 10;
+  if (pet_info.happiness > 100)
+  { 
+    pet_info.happiness = 100;
+  }
+  if (pet_info.energy > 10) 
+  {
+    pet_info.energy = 10;
+  }
 
   updatePetInfoInHtml();
 }
@@ -85,3 +110,5 @@ function showPetMessage(message) {
     $msg.fadeOut(400);
   }, 1000);
 }
+
+
