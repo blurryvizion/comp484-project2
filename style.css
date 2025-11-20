@@ -1,6 +1,6 @@
 /* Page background and base text color */
 :root {
-  --soft-white: #eebed7; /* softer white */
+  --soft-white: #eebed7; 
   --text-color: #19191f;
 }
 
@@ -29,11 +29,12 @@ html, body {
   width: 100%;
 }
 
-/* Larger pet image */
+/* pet image */
 .pet-image {
   height: 350px;
   width: auto;
   border-radius: 10px;
+  border: 5px solid #ffc4f9;
 }
 
 /* Center stats */
@@ -45,7 +46,7 @@ html, body {
 /* Pet message */
 .pet-message {
   margin-top: 10px;
-  font-style: italic;
+  font-style: comic sans ms;
   min-height: 22px;
   display: none;
 }
