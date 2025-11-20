@@ -82,6 +82,7 @@ function updatePetInfoInHtml() {
 // Highlight active button using siblings()
 function setActiveButton(button) 
 {
+  
   /**************************************************************************************
    * siblings(): selects the other buttons next to this one
    * **************************************************************************************/
