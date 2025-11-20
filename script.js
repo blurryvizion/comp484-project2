@@ -80,8 +80,11 @@ function updatePetInfoInHtml() {
 }
 
 // Highlight active button using siblings()
-function setActiveButton(button) {
-  // siblings(): selects the other buttons next to this one
+function setActiveButton(button) 
+{
+  /**************************************************************************************
+   * siblings(): selects the other buttons next to this one
+   * **************************************************************************************/
   button.addClass('active-btn');
   button.siblings('button').removeClass('active-btn');
 }
@@ -90,7 +93,10 @@ function setActiveButton(button) {
 function showPetMessage(message) {
   var msg = $('#pet-message');
 
-  // html(): sets HTML content (allows <strong> tags)
+  /******************************************************************************
+   * html(): sets HTML content (allows <strong> tags)
+   * ***************************************************************************/
+
   msg.html(message);
 
   msg.fadeIn(200);
