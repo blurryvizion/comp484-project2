@@ -34,7 +34,7 @@ html, body {
   height: 350px;
   width: auto;
   border-radius: 10px;
-  border: 10px ridge rgb(69, 26, 65 / 0.6);
+  border: 10px solid #942a88 ;
 }
 
 /* Center stats */
